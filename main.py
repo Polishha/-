@@ -148,12 +148,11 @@ def grades_lect(lecturer_list, course):
             return all_grades1 / colvo_grades1
 
 
+print (student_1)
+print (lecturer_1)
+print (student_1.averge() < student_2.averge())
+print (student_1.averge() == student_2.averge())
+print (lecturer_1.averge_l() == lecturer_2.averge_l())
+
 print (grades_student(student_list, 'Джава'))
 print (grades_lect(lecturer_list, 'Питон'))
-
-# print (student_1)
-# print (lecturer_1)
-# print (student_1.averge() < student_2.averge())
-# print (student_1.averge() == student_2.averge())
-# print (lecturer_1.averge_l() == lecturer_2.averge_l())
-
