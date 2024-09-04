@@ -1,4 +1,5 @@
 class Student:
+    student_list = []
     def __init__(self, name, surname, gender):
         self.name = name
         self.surname = surname
@@ -33,7 +34,7 @@ class Student:
     def __str__(self):
         return (f'Имя: {self.name}\n'
                 f'Фамилия: {self.surname}\n' 
-                f'Средняя оценка за домашнее задание: {self.averge}\n'
+                f'Средняя оценка за домашнее задание: {self.averge()}\n'
                 f'Курсы в процессе изучения: {self.courses_in_progress}\n'
                 f'Завершенные курсы: {self.finished_courses}')
 
@@ -49,6 +50,7 @@ class Mentor:
 
 
 class Lecturer(Mentor):
+    lecturer_list = []
     def __init__(self, name, surname):
         super().__init__(name, surname)
         self.lecturer_grades = {}
@@ -70,7 +72,7 @@ class Lecturer(Mentor):
     def __str__(self):
         return (f'Имя: {self.name}\n'
                 f'Фамилия: {self.surname}\n'
-                f'Средняя оцена за лекции: {self.averge_l}')
+                f'Средняя оцена за лекции: {self.averge_l()}')
 
 
 class Reviewer(Mentor):
@@ -100,7 +102,7 @@ student_1.courses_in_progress += ['Джава']
 student_1.finished_courses += ['Кобра']
 student_2.courses_in_progress += ['Питон']
 student_2.finished_courses += ['Джава']
-
+student_list = [student_1 , student_2]
 
 lecturer_1 = Lecturer('Мистер', 'Фрэш')
 lecturer_2 = Lecturer('Шлёпа', 'Большой')
@@ -112,10 +114,33 @@ rewiewer_1.courses_attached += ['Питон']
 rewiewer_1.courses_attached += ['Джава']
 lecturer_2.courses_attached += ['Питон']
 rewiewer_2.courses_attached += ['Джава']
+lecturer_list = [lecturer_1 , lecturer_2]
 
 rewiewer_1.rate_hw(student_1, 'Питон', 10)
-rewiewer_2.rate_hw(student_1, 'Питон', 6)
-# cool_mentor.rate_hw(best_student, 'Python', 10)
-# (cool_mentor.rate_hw(best_student, 'Python', 10)
+rewiewer_1.rate_hw(student_1, 'Джава', 8)
+rewiewer_2.rate_hw(student_1, 'Джава', 6)
+rewiewer_1.rate_hw(student_2, 'Питон', 7)
+rewiewer_1.rate_hw(student_2, 'Питон', 7)
+rewiewer_1.rate_hw(student_2, 'Питон', 9)
+rewiewer_1.rate_hw(student_2, 'Питон', 10)
 
-print (student_1.grades)
+student_1.rate_st(lecturer_1, 'Джава', 10)
+student_2.rate_st(lecturer_1, 'Джава', 6)
+student_1.rate_st(lecturer_1, 'Питон', 8)
+student_2.rate_st(lecturer_1, 'Питон', 6)
+student_1.rate_st(lecturer_2, 'Питон', 10)
+student_2.rate_st(lecturer_2, 'Питон', 8)
+
+    def grades_student(student_list, course)
+        average_course_grade = 0
+        
+
+
+
+
+print (student_1)
+print (lecturer_1)
+print (student_1.averge() < student_2.averge())
+print (student_1.averge() == student_2.averge())
+print (lecturer_1.averge_l() == lecturer_2.averge_l())
+
