@@ -131,16 +131,29 @@ student_2.rate_st(lecturer_1, 'Питон', 6)
 student_1.rate_st(lecturer_2, 'Питон', 10)
 student_2.rate_st(lecturer_2, 'Питон', 8)
 
-    def grades_student(student_list, course)
-        average_course_grade = 0
-        
+def grades_student(student_list, course):
+    for student in student_list:
+        for grades in student.grades:
+            grades_list = student.grades.get(course)
+            all_grades = sum(grades_list)
+            colvo_grades = len(grades_list)
+            return all_grades / colvo_grades
+
+def grades_lect(lecturer_list, course):
+    for lecturer in lecturer_list:
+        for grades in lecturer.lecturer_grades:
+            grades_list1 = lecturer.lecturer_grades.get(course)
+            all_grades1 = sum(grades_list1)
+            colvo_grades1 = len(grades_list1)
+            return all_grades1 / colvo_grades1
 
 
+print (grades_student(student_list, 'Джава'))
+print (grades_lect(lecturer_list, 'Питон'))
 
-
-print (student_1)
-print (lecturer_1)
-print (student_1.averge() < student_2.averge())
-print (student_1.averge() == student_2.averge())
-print (lecturer_1.averge_l() == lecturer_2.averge_l())
+# print (student_1)
+# print (lecturer_1)
+# print (student_1.averge() < student_2.averge())
+# print (student_1.averge() == student_2.averge())
+# print (lecturer_1.averge_l() == lecturer_2.averge_l())
 
